@@ -7,14 +7,19 @@
     <title>Task Manager</title>
 </head>
 <body>
-    <div class="row">
-        <div class="box">
-        <h2 id="title"> Task Manager <h2>
-            <div">
-            <input type="text" name="name" class="input task-input" placeholder="insira sua atividade"/>
-            <button class="input orange-button">Enviar</button>
+    <div class="column-container">
+        <div class="box column-container" id="task-box">
+            <h2> Task Manager <h2>
+            <div>
+                <input type="text" name="name" class="input task-input" placeholder="insira sua atividade"/>
+                <button class="input orange-button">Enviar</button>
             </div>
         </div>
+        <div id="tasks-container">
+            
+        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
