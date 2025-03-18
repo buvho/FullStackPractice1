@@ -34,12 +34,12 @@ const updateTask = asyncWrapper( async(req,res) => {
 
 const deleteTask = asyncWrapper( async(req,res) => {
     const {id:taskID} = req.params
-    req.params = await Tasks.findOneAndDelete({_id:taskID})
+    const wantedTask = await Tasks.findOneAndDelete({_id:taskID})
     if (!wantedTask){
-        res.status(404).json({msg:`Nenhuma tarefa encontrada com o id: ${taskID}`})
-        return
+        return res.status(404).json({ msg: `Nenhuma tarefa encontrada com o ID: ${taskID}` });
     }
-    res.status(200).json(wantedTask)
+    res.status(200).json({ msg: "Tarefa deletada com sucesso", deletedTask: wantedTask });
+    return
 })
 
 module.exports = {
